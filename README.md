@@ -1,8 +1,12 @@
+
 # EM Clustering Algorithm for Unsupervised Classification of Articles
 
-## General
+In this assignment, we applied the EM clustering algorithm to categorize a collection of articles into nine predefined topics. Here are the key findings and analyses from our implementation:
 
-In this exercise, you will implement the EM clustering algorithm for unsupervised classification of articles into clusters. The task involves clustering articles based on their content (unigrams) while utilizing topic information only for evaluation purposes. Refer to the document "Underflow Scaling and Smoothing in EM" for detailed instructions.
+## Threshold to Stop the EM Iterations
+
+We set the stopping criterion (`epsilon`) for the EM algorithm to 0.01. This means that if the change in likelihood between iterations falls below 0.01, we consider the algorithm to have converged and stop further iterations.
+
 
 ## Input
 
@@ -31,12 +35,41 @@ Experiment with different values of lambda (λ) in the M-step smoothing to achie
 
 Initialize the EM algorithm by splitting the 2124 articles in `develop.txt` into 9 initial clusters in a modulo-9 manner.
 
-## Report
+## Threshold to Stop the EM Iterations
 
-### Stopping Criterion
+We set the stopping criterion (`epsilon`) for the EM algorithm to 0.01. This means that if the change in likelihood between iterations falls below 0.01, we consider the algorithm to have converged and stop further iterations.
 
-Define your stopping criterion for the EM iterations and report it.
+## Log Likelihood & Perplexity Graphs
 
+We plotted two graphs to monitor the algorithm's progress:
+- **Log Likelihood**: This graph shows the increase in log likelihood with each iteration, demonstrating that the algorithm is converging towards a solution.
+- **Perplexity**: The perplexity graph depicts how the perplexity decreases or remains stable across iterations. Lower perplexity indicates better model performance in predicting article topics.
+
+## Confusion Matrix (9x9)
+
+The confusion matrix illustrates the correspondence between predicted clusters and actual topics. Rows represent clusters sorted by size, and columns represent topics from our dataset. Each cell \( M_{ij} \) indicates the number of articles classified into cluster \( i \) that belong to topic \( j \).
+
+## Histograms for Confusion Matrix
+
+We created histograms corresponding to each cluster, showing the distribution of articles across topics within that cluster. These histograms provide a visual representation of which topics are dominant within each cluster.
+
+## Accuracy
+
+The accuracy of our model was calculated to be approximately 61.5%. This metric reflects the percentage of correctly classified articles compared to the total number of articles processed.
+
+## More Hyperparameters and Parameters
+
+### Vocabulary Size After Filtering
+
+After filtering out rare words (those appearing three times or less), our vocabulary size reduced to 6,800 unique words. This filtering step helps improve computational efficiency and model accuracy.
+
+### Smoothing Parameter (\( \lambda \))
+
+We experimented with different values and selected \( \lambda = 0.023 \) for Lidstone smoothing during the M-step. This parameter adjustment was crucial given our large vocabulary size (300,000 words), ensuring that all words contribute meaningfully to topic probability calculations.
+
+### Handling Underflow (Parameter \( k \))
+
+To mitigate underflow issues during calculations, we employed a scaling factor \( k \). This technique involved logarithmic transformation and normalization of probabilities to prevent excessively large or small values, thereby stabilizing the algorithm's computations.
 ### Log Likelihood and Perplexity
 
 Print the log likelihood after each iteration and plot a graph where:
