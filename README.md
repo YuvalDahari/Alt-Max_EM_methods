@@ -56,9 +56,7 @@ We created histograms corresponding to each cluster, showing the distribution of
 ## Accuracy
 
 The accuracy of our model was calculated to be approximately 61.5%. This metric reflects the percentage of correctly classified articles compared to the total number of articles processed.
-\[
-\text{Accuracy} = \frac{\text{Number of correct assignments}}{\text{Total number of assignments}}
-\]
+
 
 ## More Hyperparameters and Parameters
 
