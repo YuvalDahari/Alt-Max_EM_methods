@@ -99,21 +99,6 @@ Use Excel or a similar tool to create 9 histograms (one per cluster) where:
 
 Label each histogram with its dominant topic (topic with the most articles).
 
-### Accuracy
-
-Calculate and report the accuracy of your classification:
-\[
-\text{Accuracy} = \frac{\text{Number of correct assignments}}{\text{Total number of assignments}}
-\]
-
-Ensure your model achieves an accuracy greater than 0.6.
-
-### Constants and Parameters
-
-Report the following:
-- \( k \) (from underflow treatment)
-- Vocabulary size after filtering (should be 6,800)
-- Smoothing parameter \( \lambda \) used in the M-step.
 
 
 
