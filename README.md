@@ -63,7 +63,7 @@ We plotted two graphs to monitor the algorithm's progress:
 
 ## Confusion Matrix (9x9)
 
-The confusion matrix illustrates the correspondence between predicted clusters and actual topics. Rows represent clusters sorted by size, and columns represent topics from our dataset. Each cell \( M_{ij} \) indicates the number of articles classified into cluster \( i \) that belong to topic \( j \).
+The confusion matrix illustrates the correspondence between predicted clusters and actual topics. Rows represent clusters sorted by size, and columns represent topics from our dataset. Each cell $M_{ij}$ indicates the number of articles classified into cluster $i$ that belong to topic $j$.
 
 ## Histograms for Confusion Matrix
 
