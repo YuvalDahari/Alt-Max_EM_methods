@@ -80,7 +80,7 @@ The accuracy of our model was calculated to be approximately 61.5%. This metric 
 
 After filtering out rare words (those appearing three times or less), our vocabulary size reduced to 6,800 unique words. This filtering step helps improve computational efficiency and model accuracy.
 
-### Smoothing Parameter (\( \lambda \))
+### Smoothing Parameter ($\lambda$)
 
 We experimented with different values and selected \( \lambda = 0.023 \) for Lidstone smoothing during the M-step. This parameter adjustment was crucial given our large vocabulary size (300,000 words), ensuring that all words contribute meaningfully to topic probability calculations.
 
