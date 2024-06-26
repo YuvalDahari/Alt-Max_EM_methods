@@ -82,11 +82,11 @@ After filtering out rare words (those appearing three times or less), our vocabu
 
 ### Smoothing Parameter ($\lambda$)
 
-We experimented with different values and selected \( \lambda = 0.023 \) for Lidstone smoothing during the M-step. This parameter adjustment was crucial given our large vocabulary size (300,000 words), ensuring that all words contribute meaningfully to topic probability calculations.
+We experimented with different values and selected $\lambda = 0.023$ for Lidstone smoothing during the M-step. This parameter adjustment was crucial given our large vocabulary size (300,000 words), ensuring that all words contribute meaningfully to topic probability calculations.
 
-### Handling Underflow (Parameter \( k \))
+### Handling Underflow ($k$)
 
-To mitigate underflow issues during calculations, we employed a scaling factor \( k \). This technique involved logarithmic transformation and normalization of probabilities to prevent excessively large or small values, thereby stabilizing the algorithm's computations.
+To mitigate underflow issues during calculations, we employed a scaling factor $k$. This technique involved logarithmic transformation and normalization of probabilities to prevent excessively large or small values, thereby stabilizing the algorithm's computations.
 ### Log Likelihood and Perplexity
 
 Print the log likelihood after each iteration and plot a graph where:
@@ -94,10 +94,8 @@ Print the log likelihood after each iteration and plot a graph where:
 - Y-axis: Log likelihood
 
 Calculate and plot the mean perplexity per word using the formula:
-\[
-\text{Perplexity} = e^{-\frac{\text{Log Likelihood}}{N}}
-\]
-where \( N \) is the number of words in the dataset.
+$Perplexity = e^{-\frac{\text{Log Likelihood}}{N}}$
+where $N$ is the number of words in the dataset.
 
 ### Confusion Matrix
 
