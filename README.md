@@ -3,6 +3,22 @@
 
 In this assignment, we applied the EM clustering algorithm to categorize a collection of articles into nine predefined topics. Here are the key findings and analyses from our implementation:
 
+
+## EM Algorithm Explanation
+
+The EM (Expectation-Maximization) algorithm is an iterative method used for finding maximum likelihood estimates of parameters in statistical models. In our context of document clustering, it works as follows:
+
+1. **Initialization**: Randomly assign articles to clusters.
+
+2. **Expectation (E) Step**: For each article, calculate the probability that it belongs to each cluster based on the current parameter estimates.
+
+3. **Maximization (M) Step**: Update the parameter estimates (word probabilities for each cluster) to maximize the likelihood of the observed data given these probabilities.
+
+4. **Iteration**: Repeat steps 2 and 3 until convergence (i.e., the change in log-likelihood falls below our threshold of 0.01).
+
+The algorithm alternates between these steps, hence the name "alt-max" (alternating maximization).
+
+
 ## Threshold to Stop the EM Iterations
 
 We set the stopping criterion (`epsilon`) for the EM algorithm to 0.01. This means that if the change in likelihood between iterations falls below 0.01, we consider the algorithm to have converged and stop further iterations.
@@ -100,6 +116,28 @@ Use Excel or a similar tool to create 9 histograms (one per cluster) where:
 
 Label each histogram with its dominant topic (topic with the most articles).
 
+## Running Instructions
+
+To run the EM clustering algorithm:
+
+1. Ensure you have Python 3.x installed on your system.
+
+2. Place the `develop.txt` file in the same directory as the script.
+
+3. Open a terminal or command prompt in this directory.
+
+4. Run the script using the following command:
+```shell
+python ex3.py
+```
+5. The program will output:
+- Log likelihood and perplexity after each iteration
+- The final confusion matrix
+- The accuracy of the clustering
+
+6. Graphs and histograms will be saved as image files in the same directory.
+
+Note: Ensure you have the necessary Python libraries installed (e.g., numpy, matplotlib) for plotting graphs and performing calculations.
 
 
 
